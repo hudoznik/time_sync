@@ -4,6 +4,6 @@
   tasks:
       - name: Отправка результата в Telegram
         telegram:
-            token: '326361299:AAEIvjAY4jHc75SCXyLhZ1cIbwJ0v6B6CDw'
-            chat_id: 368904590
+            token: '{{tokentele}}'
+            chat_id: {{chat_id}}
             msg: Синхронизация завершена
