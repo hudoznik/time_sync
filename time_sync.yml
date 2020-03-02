@@ -1,11 +1,13 @@
 # Отправка сообщения о завершении playbook в telegram
 - name: Синхронизация времени
   hosts: all
-  set_fact:
-    ansible_python_interpreter: "{% if 'python3' in ansible_python_interpreter|default('') %}/usr/bin/python3{% else %}/usr/bin/python{% endif %}"
   tasks:
+      - name: Установка интерпритатера
+        set_fact:
+            ansible_python_interpreter: "{% if 'python3' in ansible_python_interpreter|default('') %}/usr/bin/python3{% else %}/usr/bin/python{% endif %}"
       - name: Отправка результата в Telegram
         telegram:
-            token: [tokentele]
+            #token: [tokentele]
+            token: \"{{ tokentele }}\"
             chat_id: \"{{ chat_id }}\"
             msg: Синхронизация завершена
