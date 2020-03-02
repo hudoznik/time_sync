@@ -4,6 +4,6 @@
   tasks:
       - name: Отправка результата в Telegram
         telegram:
-            token: \"{{ tokentele }}\"
+            token: [tokentele]
             chat_id: \"{{ chat_id }}\"
             msg: Синхронизация завершена
