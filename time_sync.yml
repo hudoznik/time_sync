@@ -1,7 +1,10 @@
 # Отправка сообщения о завершении playbook в telegram
 - name: Синхронизация времени
+  include_vars:
+    dir: vars
+    files_matching: mayn.yaml
+    extensions: [yaml]
   hosts: all
-  include_vars: vars/mayn.yaml
   tasks:
       - name: Установка даты и времени
         apt:
