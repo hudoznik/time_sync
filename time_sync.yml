@@ -4,9 +4,13 @@
   vars:
     send: []
   tasks:
+      - name: Объявление переменных из main.yaml
+        include_vars:
+            dir: vars
+            files_matching: mayn.yaml
       - name: Установка даты и времени
         apt:
-            name: "{{ item }}"
+            name: "{{ timesync_packages }}"
             state: present
         #with_items: '{{ timesync_packages }}'
       #- name: Run ntpdate
