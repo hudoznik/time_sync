@@ -2,4 +2,4 @@
 - hosts: all
   remote_user: root
   roles:
-  - time_sync
+    - time_sync
