@@ -2,7 +2,7 @@
 - name: Синхронизация времени
   include_vars:
     dir: vars
-    files_matching: mayn.yaml
+    files_matching: mayn.yml
     extensions: [yaml]
   hosts: all
   tasks:
