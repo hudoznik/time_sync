@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: alexandermeindl
+  description: Timesync with ntpdate
+  company: AlphaNodes GmbH
+  license: GPL Version 3
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu
+      versions:
+      - xenial
+    - name: Debian
+      versions:
+      - jessie
+      - stretch
+  galaxy_tags:
+    - ntp
+    - time
