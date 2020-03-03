@@ -2,7 +2,7 @@
 - name: Синхронизация времени
   hosts: all
   tasks:
-      - name: Установка даты и времени
+      - name: Обявление переменных
         include_vars:
           dir: vars
           files_matching: mayn.yml
