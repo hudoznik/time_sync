@@ -12,9 +12,9 @@
         apt:
             name: "{{ timesync_packages }}"
             state: present
-        #with_items: '{{ timesync_packages }}'
-      #- name: Run ntpdate
-        #command: '{{ timesync_ntpdate }} -u {{ timesync_server }}'
+        with_items: '{{ timesync_packages }}'
+      - name: Run ntpdate
+        command: '{{ timesync_ntpdate }} -u {{ timesync_server }}'
       - name: Отправка результата в Telegram
         telegram:
             #token: [tokentele]
