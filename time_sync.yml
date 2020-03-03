@@ -1,16 +1,23 @@
 # Отправка сообщения о завершении playbook в telegram
 - name: Синхронизация времени
   hosts: all
-  include_vars:
-    dir: vars
-    files_matching: mayn.yaml
+  vars:
+    send: []
   tasks:
-    - name: Установка даты и времени
-      apt:
-        name: "{{ timesync_packages }}"
-        state: present
-    - name: Отправка результата в Telegram
-      telegram:
-        token: "{{ tokentele }}"
-        chat_id: "{{ chat_id }}"
-        msg: Синхронизация завершена
+      - name: Объявление переменных из main.yaml
+        include_vars:
+            dir: vars
+            files_matching: mayn.yaml
+      - name: Установка даты и времени
+        apt:
+            name: "{{ timesync_packages }}"
+            state: present
+        #with_items: '{{ timesync_packages }}'
+      #- name: Run ntpdate
+        #command: '{{ timesync_ntpdate }} -u {{ timesync_server }}'
+      - name: Отправка результата в Telegram
+        telegram:
+            #token: [tokentele]
+            token: "{{ tokentele }}"
+            chat_id: "{{ chat_id }}"
+            msg: Синхронизация завершена
