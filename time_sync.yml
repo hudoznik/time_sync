@@ -1,6 +1,7 @@
 # Отправка сообщения о завершении playbook в telegram
 - name: Синхронизация времени
   hosts: all
+  become: yes
   tasks:
       - name: Обявление переменных
         include_vars:
