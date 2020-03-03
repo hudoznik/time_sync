@@ -1,6 +1,5 @@
 ---
 - hosts: localhost
   remote_user: root
-
   roles:
-    - role: time_sync
+    - time_sync
