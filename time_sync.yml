@@ -4,10 +4,9 @@
   tasks:
       - name: Обявление переменных
         include_vars:
-          dir: vars
-          files_matching: mayn.yml
-          ignore_unknown_extensions: True
-          extensions: ['', 'yaml', 'yml', 'json']
+            dir: vars
+            ignore_unknown_extensions: True
+            extensions: ['', 'yaml', 'yml', 'json']
       - name: Установка даты и времени
         apt:
             name: "{{ timesync_packages }}"
