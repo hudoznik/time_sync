@@ -3,4 +3,4 @@
   remote_user: root
 
   roles:
-    - time_sync
+    - role: time_sync
