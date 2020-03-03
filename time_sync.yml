@@ -8,6 +8,7 @@
         include_vars:
             dir: vars
             files_matching: mayn.yaml
+            extensions: [yaml]
       - name: Установка даты и времени
         apt:
             name: "{{ timesync_packages }}"
