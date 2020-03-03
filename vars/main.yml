@@ -1,3 +1,4 @@
+---
 timesync_packages: ntpdate
 timesync_server: timeserver.ru
 timesync_ntpdate: /usr/sbin/ntpdate
