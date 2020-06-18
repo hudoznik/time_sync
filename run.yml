@@ -1,6 +1,12 @@
-# Отправка сообщения о завершении playbook в telegram
-- name: send a message to chat in playbook
-  telegram:
-    token: '9999999:XXXXXXXXXXXXXXXXXXXXXXX'
-    chat_id: 000000
-    msg: Ansible task finished
+- hosts: all
+  gather_facts: yes
+  vars:
+    file: ../vaulted_vars.yml
+    ansible_become_pass: '{{ ansible_ssh_pass }}'
+    ansible_become_ask_pass: true
+  remote_user: "{{ ansible_ssh_user }}"
+  become: yes
+  become_method: sudo
+  become_user: root
+  roles:
+    - roles/timesync
