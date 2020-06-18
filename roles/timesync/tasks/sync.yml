@@ -1,4 +1,5 @@
 - name: Run ntpdate
-  command: 'sudo {{ timesync_ntpdate }} -u {{ timesync_server }}'
+  command: '{{ timesync_ntpdate }} -u {{ timesync_server }}'
   become: yes
+  become_method: sudo
   become_user: root
