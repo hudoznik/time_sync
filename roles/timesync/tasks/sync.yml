@@ -2,5 +2,5 @@
   command: '{{ timesync_ntpdate }} -u {{ timesync_server }}'
   check_mode: no
   become: yes
-  become_method: su
+  become_method: sudo
   become_user: root
