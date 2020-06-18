@@ -1,5 +1,7 @@
-- name: Be sure timesync packages are installed
+- name: Обновление списка пакетов
   apt:
-    name: '{{ item }}'
-    state: present
-  with_items: '{{ timesync_packages }}'
+    update_cache: yes
+- name: Установка последней версии ntpdate
+  apt:
+    name: '{{ timesync_package }'
+    state: latest

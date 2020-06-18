@@ -1,5 +1,6 @@
 timesync_packages:
   - ntpdate
-
-timesync_server: timeserver.ru
+timesync_package: ntpdate
+server_time: timeserver.ru
+timesync_server: 192.168.7.201
 timesync_ntpdate: /usr/sbin/ntpdate
