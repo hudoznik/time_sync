@@ -1,2 +1,4 @@
 - name: Run ntpdate
   command: '{{ timesync_ntpdate }} -u {{ timesync_server }}'
+  become: true
+  become_user: root
