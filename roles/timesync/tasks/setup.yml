@@ -16,5 +16,5 @@
     update_cache: yes
 - name: Установка последней версии ntpdate
   apt:
-    name: '{{ timesync_package }'
+    name: '{{ timesync_package }}'
     state: latest
