@@ -8,5 +8,5 @@
   become_method: sudo
   become_user: root
   roles:
-    - roles/recovery_database_to_base_to_date
+    - roles/recovery_db_to_testdb
 
