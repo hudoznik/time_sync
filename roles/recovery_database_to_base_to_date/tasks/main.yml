@@ -1,5 +1,5 @@
 # started stopped restarted
-- name: Запуск резервной копии
+- name: Востановление из копии в базу test
   command: '/opt/script/recovery_db.sh {{ basename }} {{ to_date }} {{ to_base }}' 
   become: yes
 
