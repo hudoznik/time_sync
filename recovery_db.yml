@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: yes
+  vars:
+    file: ../vaulted_vars.yml
+    ansible_become_pass: '{{ ansible_ssh_pass }}'
+    ansible_become_ask_pass: true
+  become: yes
+  become_method: sudo
+  become_user: root
+  roles:
+    - roles/recovery_db
+
