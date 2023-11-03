@@ -1,0 +1,7 @@
+# started stopped restarted
+- name: Запуск резервной копии
+  ansible.builtin.shell: {{script}} >> {{somelog}}.log
+  args:
+    executable: /bin/bash
+  become: yes
+
