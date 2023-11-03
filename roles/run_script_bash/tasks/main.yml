@@ -1,5 +1,5 @@
 # started stopped restarted
 - name: Запуск резервной копии
-  command: '{{ script }} > {{ somelog }}' 
+  command: '{{ script }} >> /var/log/{{ somelog }}.log' 
   become: yes
 
