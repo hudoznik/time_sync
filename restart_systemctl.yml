@@ -10,13 +10,14 @@
     systemd:
       daemon_reload: yes
 
-  - name: gather service facts
-    ansible.builtin.service_facts:
-
   - name: Перезапуск сервиса
+    vars:
+      file: ../vaulted_vars.yml
+      ansible_become_pass: '{{ ansible_ssh_pass }}'
+      ansible_become_ask_pass: true
     become: yes
     become_method: sudo
     systemd:
-      name: ssh
+      name: '{{ systemctl_service }}'
       state: restarted
       enabled: yes
