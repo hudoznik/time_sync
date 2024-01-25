@@ -1,0 +1,16 @@
+- hosts: all
+  tasks:
+  - name: reload systemd daemons
+    systemd:
+      daemon_reload: yes
+
+  - name: gather service facts
+    ansible.builtin.service_facts:
+
+  - name: Перезапуск сервиса
+    become: yes
+    become_user: root
+    systemd:
+      name: ssh
+      state: restarted
+      enabled: yes
