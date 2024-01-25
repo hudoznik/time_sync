@@ -5,7 +5,7 @@
       file: vars/main.yml
       ansible_become_pass: '{{ linux_become_pass }}'
       ansible_become_ask_pass: true
-    become_pass: '{{ linux_become_pass }}'
+    ansible_become_pass: '{{ linux_become_pass }}'
     become: yes
     become_method: sudo
     systemd:
