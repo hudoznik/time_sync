@@ -1,6 +1,9 @@
 - hosts: all
   tasks:
   - name: reload systemd daemons
+    become: true
+    become_user: root
+    become_method: sudo
     systemd:
       daemon_reload: yes
 
@@ -10,6 +13,7 @@
   - name: Перезапуск сервиса
     become: yes
     become_user: root
+    become_method: sudo
     systemd:
       name: ssh
       state: restarted
