@@ -2,7 +2,7 @@
   tasks:
   - name: reload systemd daemons
     vars:
-      file: vars/main.yml
+      file: vaulted_vars.yml
       ansible_become_pass: '{{ linux_become_pass }}'
       ansible_become_ask_pass: true
     become: yes
